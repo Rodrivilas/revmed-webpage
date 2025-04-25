@@ -1,0 +1,10 @@
+# Allow all web crawlers access to all content
+User-agent: *
+Allow: /
+
+# Disallow crawling of specific directories (optional)
+# Disallow: /admin/
+# Disallow: /private/
+
+# Specify the location of the sitemap (optional)
+# Sitemap: https://www.yourwebsite.com/sitemap.xml

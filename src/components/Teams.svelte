@@ -10,7 +10,7 @@
         {
             name: "Dr. Anoar De Lima Jezini",
             role: "Especialista em Pediatria",
-            image: "https://placehold.co/300x400",
+            image: "https://github.com/Rodrivilas/Photos/blob/main/A.png?raw=true",
             details:
                 "Especialista em desenvolvimento infantil e adolescente, com foco em medicina preventiva e educação em saúde.",
             education: "Mestrado em Pediatria -",
@@ -20,7 +20,7 @@
         {
             name: "Dra. Magda",
             role: "Especialista em Ginecologia",
-            image: "https://placehold.co/300x400",
+            image: "https://github.com/Rodrivilas/Photos/blob/main/M.png?raw=true",
             details:
                 "Especializada em saúde da mulher, com foco em tratamentos hormonais e reprodução assistida.",
             education: "Mestrado em Ginecologia",
@@ -39,20 +39,21 @@
     }
 </script>
 
-<section id="team" class="min-h-screen flex items-center bg-white">
+<section id="team" class="min-h-screen flex items-center bg-gradient-to-t from-white via-primary to-white">
     <div class="max-w-7xl mx-auto px-4 py-12">
         <div class="relative px-12">
             <!-- Navigation Arrows -->
             <button
-                class="absolute left-0 top-1/2 -translate-y-1/2 bg-primary text-white p-4 rounded-full shadow-lg hover:bg-orange-600 focus:outline-none focus:ring-2 focus:ring-red-500 focus:ring-offset-2 transition-colors"
+                class="absolute left-0 top-1/2 -translate-y-1/2 bg-amber-400 text-white p-4 rounded-full shadow-lg hover:bg-orange-600 focus:outline-none focus:ring-2 focus:ring-red-500 focus:ring-offset-2 transition-colors"
                 on:click={previousTeamMember}
-                aria-label="Previous team member"
+                aria-label="Membro anterior da equipe"
             >
                 <svg
                     class="w-6 h-6"
                     fill="none"
                     stroke="currentColor"
                     viewBox="0 0 24 24"
+                     aria-hidden="true"
                 >
                     <path
                         stroke-linecap="round"
@@ -64,15 +65,16 @@
             </button>
 
             <button
-                class="absolute right-0 top-1/2 -translate-y-1/2 bg-primary text-white p-4 rounded-full shadow-lg hover:bg-orange-600 focus:outline-none focus:ring-2 focus:ring-red-500 focus:ring-offset-2 transition-colors"
+                class="absolute right-0 top-1/2 -translate-y-1/2 bg-amber-400 text-white p-4 rounded-full shadow-lg hover:bg-orange-600 focus:outline-none focus:ring-2 focus:ring-red-500 focus:ring-offset-2 transition-colors"
                 on:click={nextTeamMember}
-                aria-label="Next team member"
+                aria-label="Próximo membro da equipe"
             >
                 <svg
                     class="w-6 h-6"
                     fill="none"
                     stroke="currentColor"
                     viewBox="0 0 24 24"
+                     aria-hidden="true"
                 >
                     <path
                         stroke-linecap="round"
@@ -89,7 +91,7 @@
                     class="w-full max-w-4xl transform transition-transform duration-300"
                 >
                     <div
-                        class="bg-slate-100 rounded-xl overflow-hidden shadow-lg border-4"
+                        class="bg-amber-500 rounded-xl overflow-hidden shadow-lg border-4 border-amber-500"
                     >
                         <div class="md:flex">
                             <!-- Image and Basic Info -->
@@ -97,21 +99,21 @@
                                 <img
                                     src={teamMembers[currentTeamIndex].image}
                                     alt={teamMembers[currentTeamIndex].name}
-                                    class="w-full h-96 object-cover"
+                                    class="w-full object-cover rounded-xl shadow-xl"
                                 />
-                                <div class="p-4 text-black">
-                                    <h3 class="text-xl font-bold">
+                                <div class="p-4 text-white">
+                                    <h3 class="text-xl font-nunito-sans">
                                         {teamMembers[currentTeamIndex].name}
                                     </h3>
-                                    <p>{teamMembers[currentTeamIndex].role}</p>
+                                    <p class="font-roboto-flex">{teamMembers[currentTeamIndex].role}</p>
                                 </div>
                             </div>
 
                             <!-- Desktop Details Section -->
                             <div
-                                class="hidden md:block md:w-1/2 p-6 text-black"
+                                class="hidden md:block md:w-1/2 p-6 text-white font-roboto-flex"
                             >
-                                <h4 class="text-lg font-semibold mb-4">
+                                <h4 class="text-lg font-nunito-sans mb-4 text-white ">
                                     Detalhes Profissionais
                                 </h4>
                                 <div class="space-y-4">
@@ -156,6 +158,8 @@
                             <button
                                 class="w-full p-4 text-black bg-white hover:bg-amber-100 transition-colors flex justify-between items-center"
                                 on:click={toggleTeamDetails}
+                                aria-label={isTeamDetailsExpanded ? 'Ocultar detalhes do membro da equipe' : 'Mostrar detalhes do membro da equipe'}
+                                aria-expanded={isTeamDetailsExpanded}
                             >
                                 <span>Ver Detalhes</span>
                                 <svg
@@ -165,6 +169,7 @@
                                     fill="none"
                                     stroke="currentColor"
                                     viewBox="0 0 24 24"
+                                    aria-hidden="true"
                                 >
                                     <path
                                         stroke-linecap="round"
